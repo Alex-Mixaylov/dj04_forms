@@ -7,7 +7,7 @@ def index(request):
 
 def add_movie(request):
     if request.method == 'POST':
-        form = MovieForm(request.POST)
+        form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('films')
@@ -18,4 +18,3 @@ def add_movie(request):
 def view_movies(request):
     movies = Movie.objects.all()
     return render(request, 'films/films.html', {'movies': movies})
-
