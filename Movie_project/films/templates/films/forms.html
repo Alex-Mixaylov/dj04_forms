@@ -1,0 +1,10 @@
+{% extends 'films/layout.html' %}
+
+{% block content %}
+<h2>Добавляйте сюда фильмы про Хищника</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>
+{% endblock %}
