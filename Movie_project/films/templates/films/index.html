@@ -1,0 +1,16 @@
+{% extends 'films/layout.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'add_movie' %}">Добавить фильм</a></li>
+            <li class="list-group-item"><a href="{% url 'films' %}">Список фильмов</a></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <h1>Добро пожаловать в Movie Project</h1>
+        <p>Откройте для себя фильмы вселенной Хищника!</p>
+    </div>
+</div>
+{% endblock %}
