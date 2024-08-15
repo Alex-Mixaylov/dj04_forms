@@ -5,9 +5,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Название фильма</th>
+            <th>Название</th>
+            <th>Постер</th>
             <th>Описание</th>
-            <th>Дата выхода</th>
+            <th>Дата релиза</th>
             <th>Отзывы</th>
         </tr>
     </thead>
@@ -15,8 +16,15 @@
         {% for movie in movies %}
         <tr>
             <td>{{ movie.title }}</td>
+            <td>
+                {% if movie.poster %}
+                <img src="{{ movie.poster.url }}" alt="Постер {{ movie.title }}" width="100">
+                {% else %}
+                Нет постера
+                {% endif %}
+            </td>
             <td>{{ movie.description }}</td>
-            <td>{{ movie.release_date }}</td>
+            <td>{{ movie.release_date|date:"d.m.Y" }}</td>
             <td>{{ movie.review }}</td>
         </tr>
         {% endfor %}
