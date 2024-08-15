@@ -1,10 +1,25 @@
 {% extends 'films/layout.html' %}
 
 {% block content %}
-<h2>Добавляйте сюда фильмы про Хищника</h2>
+<h2>Добавляй сюда фильмы вселенной Хищник</h2>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <div class="mb-3">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+    <div class="mb-3">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    <div class="mb-3">
+        {{ form.release_date.label_tag }}
+        {{ form.release_date }}
+    </div>
+    <div class="mb-3">
+        {{ form.review.label_tag }}
+        {{ form.review }}
+    </div>
     <button type="submit" class="btn btn-primary">Добавить</button>
 </form>
 {% endblock %}
